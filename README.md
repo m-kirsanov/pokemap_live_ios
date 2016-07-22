@@ -1,5 +1,5 @@
 # Pokemap Live iOS
-iOS application with live pokemon map
+iOS application with live pokemon go map
 
 Tutorial how to install on your device:
 
