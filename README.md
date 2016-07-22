@@ -1,6 +1,6 @@
 # Pokemap Live iOS
 iOS application with live pokemon go map
-
+![alt tag](https://github.com/ruffnecktsk/pokemap_live_ios/blob/master/0x0ss.jpg)
 Tutorial how to install on your device:
 
 http://www.idownloadblog.com/2015/09/18/how-to-compile-apps-using-xcode-7-to-run-on-a-non-jailbroken-device/
