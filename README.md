@@ -1,6 +1,10 @@
 # Pokemap Live iOS
 iOS application with live pokemon map
 
+Tutorial how to install on your device:
+
+http://www.idownloadblog.com/2015/09/18/how-to-compile-apps-using-xcode-7-to-run-on-a-non-jailbroken-device/
+
 Features:
 
 - Login using PTC account.
