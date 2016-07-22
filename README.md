@@ -21,5 +21,8 @@ To-do:
 - Local notifications.
 - More pokemon info.
 
+Inspired by [AHAAAAAAA](https://github.com/AHAAAAAAA/PokemonGo-Map/)
+
+Thanks for protobuf files to [AeonLucid](https://github.com/AeonLucid/POGOProtos)
 If you like it, please don't remove ad block:)
 Paypal - ruffnecktsk@gmail.com
