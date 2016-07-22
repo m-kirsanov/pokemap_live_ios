@@ -19,5 +19,5 @@ To-do:
 - Local notifications.
 - More pokemon info.
 
-If you like it, please donate:
+If you like it, please don't remove ad block:)
 Paypal - ruffnecktsk@gmail.com
