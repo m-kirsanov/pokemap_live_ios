@@ -21,6 +21,7 @@
 		876FFD911D3FFAEC00F5142C /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 876FFD901D3FFAEC00F5142C /* libc++.tbd */; };
 		87B6C2831D4229D0009C0F2F /* RFAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87B6C2811D4229D0009C0F2F /* RFAuthViewController.m */; };
 		87B6C2841D4229D0009C0F2F /* RFAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87B6C2821D4229D0009C0F2F /* RFAuthViewController.xib */; };
+		87D41F311D42A47B002C3347 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87D41F301D42A47B002C3347 /* GoogleService-Info.plist */; };
 		87DDEA811D3E08100082760E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 87DDEA801D3E08100082760E /* main.m */; };
 		87DDEA841D3E08100082760E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 87DDEA831D3E08100082760E /* AppDelegate.m */; };
 		87DDEA871D3E08100082760E /* RFMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87DDEA861D3E08100082760E /* RFMapViewController.m */; };
@@ -65,6 +66,7 @@
 		87B6C2801D4229D0009C0F2F /* RFAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFAuthViewController.h; sourceTree = "<group>"; };
 		87B6C2811D4229D0009C0F2F /* RFAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFAuthViewController.m; sourceTree = "<group>"; };
 		87B6C2821D4229D0009C0F2F /* RFAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RFAuthViewController.xib; sourceTree = "<group>"; };
+		87D41F301D42A47B002C3347 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		87DDEA7C1D3E08100082760E /* Pokemap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokemap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87DDEA801D3E08100082760E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		87DDEA821D3E08100082760E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				87DDEA8B1D3E08100082760E /* Assets.xcassets */,
 				87DDEA8D1D3E08100082760E /* LaunchScreen.storyboard */,
 				87DDEA901D3E08100082760E /* Info.plist */,
+				87D41F301D42A47B002C3347 /* GoogleService-Info.plist */,
 				87DDEA7F1D3E08100082760E /* Supporting Files */,
 				87B6C2801D4229D0009C0F2F /* RFAuthViewController.h */,
 				87B6C2811D4229D0009C0F2F /* RFAuthViewController.m */,
@@ -331,6 +334,7 @@
 			files = (
 				87DDEA8F1D3E08100082760E /* LaunchScreen.storyboard in Resources */,
 				87DDEA8C1D3E08100082760E /* Assets.xcassets in Resources */,
+				87D41F311D42A47B002C3347 /* GoogleService-Info.plist in Resources */,
 				87B6C2841D4229D0009C0F2F /* RFAuthViewController.xib in Resources */,
 				87DDEA8A1D3E08100082760E /* Main.storyboard in Resources */,
 			);
@@ -494,8 +498,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Mikhail Kirsanov (FH9998YKGU)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mikhail Kirsanov (FH9998YKGU)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
@@ -522,7 +526,7 @@
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruffneck.pokemap;
 				PRODUCT_NAME = Pokemap;
-				PROVISIONING_PROFILE = "dcb4042e-7924-44e5-9efa-574c6704dffb";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
@@ -575,8 +579,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Mikhail Kirsanov (FH9998YKGU)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mikhail Kirsanov (FH9998YKGU)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
@@ -603,7 +607,7 @@
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruffneck.pokemap;
 				PRODUCT_NAME = Pokemap;
-				PROVISIONING_PROFILE = "dcb4042e-7924-44e5-9efa-574c6704dffb";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;

@@ -14,12 +14,20 @@
 #import "RFMapObjectsManager.h"
 #import <UICKeyChainStore/UICKeyChainStore.h>
 #import "RFAuthViewController.h"
+#import <GoogleMobileAds/GoogleMobileAds.h>
 
-@interface RFMapViewController () <RFLocationManagerDelegate, GMSMapViewDelegate, RFMapObjectsManagerDelegate, UIAlertViewDelegate>
+@interface RFMapViewController () <RFLocationManagerDelegate,
+GMSMapViewDelegate,
+RFMapObjectsManagerDelegate,
+UIAlertViewDelegate, GADNativeAppInstallAdLoaderDelegate,
+GADNativeContentAdLoaderDelegate>
 
 @property (nonatomic, strong) GMSMapView *mapView;
 @property (nonatomic, assign) BOOL autocenter;
 @property (nonatomic, strong) UIActivityIndicatorView *loaderView;
+
+@property(nonatomic, strong) GADNativeExpressAdView *nativeExpressAdView;
+
 @end
 
 @implementation RFMapViewController
@@ -126,10 +134,14 @@
     [self.view addSubview:_mapView];
     
     _loaderView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    _loaderView.frame = CGRectMake((self.view.frame.size.width - 50) / 2, self.view.frame.size.height - 50 - 20, 50, 50);
+    _loaderView.frame = CGRectMake((self.view.frame.size.width - 50) / 2, self.view.frame.size.height - 50 - 80 - 20, 50, 50);
     _loaderView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:.2];
     _loaderView.layer.cornerRadius = 10;
     
+    _nativeExpressAdView = [[GADNativeExpressAdView alloc] initWithAdSize:kGADAdSizeBanner origin:CGPointMake(0, 0)];
+    _nativeExpressAdView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [self.view addSubview:_nativeExpressAdView];
     
     [_loaderView startAnimating];
     
@@ -141,7 +153,7 @@
 - (void)setConstraints {
     NSDictionary *metrics = @{};
     
-    NSDictionary *views = NSDictionaryOfVariableBindings(_mapView);
+    NSDictionary *views = NSDictionaryOfVariableBindings(_mapView,_nativeExpressAdView);
     
     //Horizontal layout
     [self.view addConstraints:[NSLayoutConstraint
@@ -149,9 +161,14 @@
                                options:0
                                metrics:metrics
                                views:views]];
+    [self.view addConstraints:[NSLayoutConstraint
+                               constraintsWithVisualFormat:@"|[_nativeExpressAdView]|"
+                               options:0
+                               metrics:metrics
+                               views:views]];
     
     //Vertical layout
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_mapView]|"
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_mapView]-0-[_nativeExpressAdView(80)]|"
                                                                       options:0
                                                                       metrics:metrics
                                                                         views:views]];
@@ -220,6 +237,12 @@
     mapMan.delegate = self;
     
     [self tryLogin];
+    
+    self.nativeExpressAdView.adUnitID = @"ca-app-pub-5357977374092773/1064692445";
+    self.nativeExpressAdView.rootViewController = self;
+    
+    GADRequest *request = [GADRequest request];
+    [self.nativeExpressAdView loadRequest:request];
     // Do any additional setup after loading the view, typically from a nib.
 }
 

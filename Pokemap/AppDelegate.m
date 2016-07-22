@@ -14,6 +14,7 @@
 #import "RFMapObjectsManager.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import <Firebase.h>
 
 @interface AppDelegate ()
 
@@ -24,12 +25,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [Fabric with:@[[Crashlytics class]]];
 
-
     [[UICKeyChainStore keyChainStore] setString:nil forKey:@"api_url"];
     
     [RFLocationManager instance];
     
     [GMSServices provideAPIKey:RFGoogleApiKey];
+    
+    // Use Firebase library to configure APIs
+    [FIRApp configure];
     
     // Override point for customization after application launch.
     return YES;
