@@ -7,7 +7,14 @@ iOS application with live pokemon go map
 
 Tutorial how to install on your device:
 
-http://www.idownloadblog.com/2015/09/18/how-to-compile-apps-using-xcode-7-to-run-on-a-non-jailbroken-device/
+1. Clone repository
+2. Install Cocoapods
+3. Open Terminal
+4. Go to repository directory
+5. run "pod install"
+6. Open Pokemap.xcworkspace in XCode
+7. Connect your device to Mac
+8. Select in menu Product->Run
 
 Features:
 
