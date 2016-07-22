@@ -1,0 +1,276 @@
+message ResponseEnvelope {
+	optional int32 status_code = 1;
+	optional uint64 request_id = 2;
+	optional string api_url = 3;
+
+	optional ResponseEnvelopeUnknown6 unknown6 = 6;
+	optional ResponseAuthTicket auth_ticket = 7;
+
+	repeated bytes returns = 100;
+	optional string error = 101;
+
+	message Unknown7 {
+		optional bytes unknown71 = 1;
+		optional int64 unknown72 = 2;
+		optional bytes unknown73 = 3;
+	}
+}
+
+message ResponseAuthTicket {
+	required bytes start = 1;
+	required uint64 expire_timestamp_ms = 2;
+	required bytes end = 3;
+}
+
+message ResponseEnvelopeUnknown6 {
+	required int32 unknown1 = 1; //6
+	required ResponseEnvelopeUnknown6Unknown2 unknown2 = 2;
+}
+
+message ResponseEnvelopeUnknown6Unknown2 {
+	required bytes unknown1 = 1;
+}
+
+message GetMapObjectsResponse {
+	repeated MapCell map_cells = 1;
+	optional SpawnPoint status = 2;
+}
+
+// A cell is a geographical "zone" containing objects like pokemon, gyms, and pokestops.
+message MapCell {
+	// S2 geographic area that the cell covers (http://s2map.com/) (https://code.google.com/archive/p/s2-geometry-library/)
+	optional uint64 s2_cell_id = 1;
+	optional int64 current_timestamp_ms = 2;
+	repeated bytes forts = 3;
+	repeated SpawnPoint spawn_points = 4;
+	repeated string deleted_objects = 6;
+	optional bool is_truncated_list = 7;
+	repeated bytes fort_summaries = 8;
+	repeated SpawnPoint decimated_spawn_points = 9;
+
+	// Pokemon within 2 steps or less.
+	repeated WildPokemon wild_pokemons = 5;
+	// Pokemon within 1 step or none.
+	repeated MapPokemon catchable_pokemons = 10;
+	// Pokemon farther away than 2 steps, but still in the area.
+	repeated NearbyPokemon nearby_pokemons = 11;
+}
+
+message SpawnPoint {
+	required double latitude = 2;
+	required double longitude = 3;
+}
+
+message MapPokemon {
+	optional string spawnpoint_id = 1;
+	optional fixed64 encounter_id = 2;
+	optional PokemonId pokemon_id = 3;
+	// After this timestamp, the pokemon will be gone.
+	optional int64 expiration_timestamp_ms = 4;
+	optional double latitude = 5;
+	optional double longitude = 6;
+}
+
+message NearbyPokemon {
+	optional PokemonId pokemon_id = 1;
+	optional float distance_in_meters = 2;
+	optional fixed64 encounter_id = 3;
+}
+
+message WildPokemon {
+	optional fixed64 encounter_id = 1;
+	optional int64 last_modified_timestamp_ms = 2;
+	optional double latitude = 3;
+	optional double longitude = 4;
+	optional string spawnpoint_id = 5;
+	optional PokemonData pokemon_data = 7;
+	optional int32 time_till_hidden_ms = 11;
+}
+
+message PokemonData {
+	optional fixed64 id = 1;
+	optional PokemonId pokemon_id = 2;
+	optional int32 cp = 3;
+	optional int32 stamina = 4;
+	optional int32 stamina_max = 5;
+	optional bytes move_1 = 6;
+	optional bytes move_2 = 7;
+	optional int32 deployed_fort_id = 8;
+	optional string owner_name = 9;
+	optional bool is_egg = 10;
+	optional int32 egg_km_walked_target = 11;
+	optional int32 egg_km_walked_start = 12;
+	optional int32 origin = 14;
+	optional float height_m = 15;
+	optional float weight_kg = 16;
+	optional int32 individual_attack = 17;
+	optional int32 individual_defense = 18;
+	optional int32 individual_stamina = 19;
+	optional int32 cp_multiplier = 20;
+	optional int32 pokeball = 21;
+	optional uint64 captured_cell_id = 22;
+	optional int32 battles_attacked = 23;
+	optional int32 battles_defended = 24;
+	optional int32 egg_incubator_id = 25;
+	optional uint64 creation_time_ms = 26;
+	optional int32 num_upgrades = 27;
+	optional int32 additional_cp_multiplier = 28;
+	optional int32 favorite = 29;
+	optional string nickname = 30;
+	optional int32 from_fort = 31;
+}
+
+enum PokemonId {
+	MISSINGNO = 0;
+	BULBASAUR = 1;
+	IVYSAUR = 2;
+	VENUSAUR = 3;
+	CHARMENDER = 4;
+	CHARMELEON = 5;
+	CHARIZARD = 6;
+	SQUIRTLE = 7;
+	WARTORTLE = 8;
+	BLASTOISE = 9;
+	CATERPIE = 10;
+	METAPOD = 11;
+	BUTTERFREE = 12;
+	WEEDLE = 13;
+	KAKUNA = 14;
+	BEEDRILL = 15;
+	PIDGEY = 16;
+	PIDGEOTTO = 17;
+	PIDGEOT = 18;
+	RATTATA = 19;
+	RATICATE = 20;
+	SPEAROW = 21;
+	FEAROW = 22;
+	EKANS = 23;
+	ARBOK = 24;
+	PIKACHU = 25;
+	RAICHU = 26;
+	SANDSHREW = 27;
+	SANDLASH = 28;
+	NIDORAN_FEMALE = 29;
+	NIDORINA = 30;
+	NIDOQUEEN = 31;
+	NIDORAN_MALE = 32;
+	NIDORINO = 33;
+	NIDOKING = 34;
+	CLEFARY = 35;
+	CLEFABLE = 36;
+	VULPIX = 37;
+	NINETALES = 38;
+	JIGGLYPUFF = 39;
+	WIGGLYTUFF = 40;
+	ZUBAT = 41;
+	GOLBAT = 42;
+	ODDISH = 43;
+	GLOOM = 44;
+	VILEPLUME = 45;
+	PARAS = 46;
+	PARASECT = 47;
+	VENONAT = 48;
+	VENOMOTH = 49;
+	DIGLETT = 50;
+	DUGTRIO = 51;
+	MEOWTH = 52;
+	PERSIAN = 53;
+	PSYDUCK = 54;
+	GOLDUCK = 55;
+	MANKEY = 56;
+	PRIMEAPE = 57;
+	GROWLITHE = 58;
+	ARCANINE = 59;
+	POLIWAG = 60;
+	POLIWHIRL = 61;
+	POLIWRATH = 62;
+	ABRA = 63;
+	KADABRA = 64;
+	ALAKHAZAM = 65;
+	MACHOP = 66;
+	MACHOKE = 67;
+	MACHAMP = 68;
+	BELLSPROUT = 69;
+	WEEPINBELL = 70;
+	VICTREEBELL = 71;
+	TENTACOOL = 72;
+	TENTACRUEL = 73;
+	GEODUGE = 74;
+	GRAVELER = 75;
+	GOLEM = 76;
+	PONYTA = 77;
+	RAPIDASH = 78;
+	SLOWPOKE = 79;
+	SLOWBRO = 80;
+	MAGNEMITE = 81;
+	MAGNETON = 82;
+	FARFETCHD = 83;
+	DODUO = 84;
+	DODRIO = 85;
+	SEEL = 86;
+	DEWGONG = 87;
+	GRIMER = 88;
+	MUK = 89;
+	SHELLDER = 90;
+	CLOYSTER = 91;
+	GASTLY = 92;
+	HAUNTER = 93;
+	GENGAR = 94;
+	ONIX = 95;
+	DROWZEE = 96;
+	HYPNO = 97;
+	KRABBY = 98;
+	KINGLER = 99;
+	VOLTORB = 100;
+	ELECTRODE = 101;
+	EXEGGCUTE = 102;
+	EXEGGUTOR = 103;
+	CUBONE = 104;
+	MAROWAK = 105;
+	HITMONLEE = 106;
+	HITMONCHAN = 107;
+	LICKITUNG = 108;
+	KOFFING = 109;
+	WEEZING = 110;
+	RHYHORN = 111;
+	RHYDON = 112;
+	CHANSEY = 113;
+	TANGELA = 114;
+	KANGASKHAN = 115;
+	HORSEA = 116;
+	SEADRA = 117;
+	GOLDEEN = 118;
+	SEAKING = 119;
+	STARYU = 120;
+	STARMIE = 121;
+	MR_MIME = 122;
+	SCYTHER = 123;
+	JYNX = 124;
+	ELECTABUZZ = 125;
+	MAGMAR = 126;
+	PINSIR = 127;
+	TAUROS = 128;
+	MAGIKARP = 129;
+	GYARADOS = 130;
+	LAPRAS = 131;
+	DITTO = 132;
+	EEVEE = 133;
+	VAPOREON = 134;
+	JOLTEON = 135;
+	FLAREON = 136;
+	PORYGON = 137;
+	OMANYTE = 138;
+	OMASTAR = 139;
+	KABUTO = 140;
+	KABUTOPS = 141;
+	AERODACTYL = 142;
+	SNORLAX = 143;
+	ARTICUNO = 144;
+	ZAPDOS = 145;
+	MOLTRES = 146;
+	DRATINI = 147;
+	DRAGONAIR = 148;
+	DRAGONITE = 149;
+	MEWTWO = 150;
+	MEW = 151;
+}
