@@ -1,5 +1,23 @@
 # Pokemap Live iOS
-iOS application with live pokemon map
+iOS application with live pokemon go map
 
-![alt tag](https://github.com/ruffnecktsk/pokemap_live_ios/blob/master/3y-OPAzZblA.jpg)
+Tutorial how to install on your device:
 
+http://www.idownloadblog.com/2015/09/18/how-to-compile-apps-using-xcode-7-to-run-on-a-non-jailbroken-device/
+
+Features:
+
+- Login using PTC account.
+- Shows nearby pokemons on map. 
+- Implemented features for more human-like changing coordinates to avoid ban. You can change speed in km/h between requests.
+
+Please don't use your main account with this app, it's not completely tested. Create new account before using app.
+
+To-do:
+
+- Autocollect pokemons and pokestops.
+- Local notifications.
+- More pokemon info.
+
+If you like it, please don't remove ad block:)
+Paypal - ruffnecktsk@gmail.com
