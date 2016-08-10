@@ -1,5 +1,5 @@
 # Pokemap Live iOS
-iOS application with live pokemon go map
+iOS application with live pokemon go map, works with recent API changes.
 
 <p align="center">
   <img src="https://github.com/ruffnecktsk/pokemap_live_ios/blob/master/Simulator.png" width="300"/>
