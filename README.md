@@ -5,6 +5,7 @@ iOS application with live pokemon go map
   <img src="https://github.com/ruffnecktsk/pokemap_live_ios/blob/master/0x0ss.jpg" width="300"/>
 </p>
 
+<<<<<<< HEAD
 How to install on your device (non-jailbreak):
 
 1. Clone repository
@@ -20,6 +21,11 @@ How to install with jailbreak:
 
 1. Download ipa from "ipa" folder.
 2. Install.
+=======
+Tutorial how to install on your device:
+
+http://www.idownloadblog.com/2015/09/18/how-to-compile-apps-using-xcode-7-to-run-on-a-non-jailbroken-device/
+>>>>>>> 77e62c52f67a64953775133583e1e6d70502cb9f
 
 Features:
 
