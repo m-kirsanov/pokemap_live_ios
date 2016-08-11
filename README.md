@@ -13,8 +13,11 @@ How to install (EN):
 4. Open Cydia Impactor.
 5. Drag downloaded ipa to Cydia Impactor window.
 6. Enter your Apple ID email/password.
-7. Wait.
-8. App installed.
+7. Wait for app install.
+8. On device go to Settings -> General -> Profiles & Device management
+9. Find profile with name of your Apple ID and open it
+10. Tap "Trust"
+11. Now you can run app
 
 How to install (RU):
 
@@ -24,7 +27,10 @@ How to install (RU):
 4. Открыть Cydia Impactor.
 5. Перетащить ipa на окно Cydia impactor.
 6. Ввести свой Apple ID email/пароль.
-7. Подождать.
+7. Подождать пока приложение установится на девайс
+8. Открыть на девайсе Настройки -> Основные -> Профили и управление устройством
+9. Найти профиль со своим Apple ID и открыть его
+10. Нажать "Доверять"
 
 
 Features:
