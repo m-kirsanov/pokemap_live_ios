@@ -12,7 +12,7 @@ Also, please check [this](https://github.com/ruffnecktsk/erlang_pokemon_db)
 How to install (EN):
 
 1. Download ipa file.
-2. Download Cydia Impactor (http://www.cydiaimpactor.com).
+2. Install iTunes (only for Windows) and Download Cydia Impactor (http://www.cydiaimpactor.com).
 3. Connect your device.
 4. Open Cydia Impactor.
 5. Drag downloaded ipa to Cydia Impactor window.
@@ -26,7 +26,7 @@ How to install (EN):
 How to install (RU):
 
 1. Скачать ipa из репозитория.
-2. Скачать Cydia Impactor (http://www.cydiaimpactor.com).
+2. Установить iTunes(только для Windows) и скачать Cydia Impactor (http://www.cydiaimpactor.com).
 3. Подключить девайс через USB.
 4. Открыть Cydia Impactor.
 5. Перетащить ipa на окно Cydia impactor.
