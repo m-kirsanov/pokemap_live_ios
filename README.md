@@ -3,6 +3,8 @@ iOS application with live pokemon go map, works with recent API changes.
 
 YOU CAN DOWNLOAD LATEST VERSION FROM RELEASES
 
+Also, please check [this](https://github.com/ruffnecktsk/erlang_pokemon_db)
+
 <p align="center">
   <img src="https://github.com/ruffnecktsk/pokemap_live_ios/blob/master/Simulator.png" width="300"/>
 </p>
