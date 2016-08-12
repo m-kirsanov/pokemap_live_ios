@@ -42,6 +42,11 @@ Features:
 - No login required. 
 - Shows pokemons on map. 
 
+TODO:
+
+- Add pokemon clustering.
+- Add tracking for selected pokemons with local notifications.
+
 For donation:
 
 Paypal - ruffnecktsk@gmail.com
